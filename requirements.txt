@@ -1,0 +1,14 @@
+PyMuPDF
+streamlit
+Pillow
+
+google 
+google-generativeai
+google-ai-generativelanguage
+sentence-transformers
+
+langchain 
+groq
+langchain_community
+langchain_huggingface
+faiss-cpu

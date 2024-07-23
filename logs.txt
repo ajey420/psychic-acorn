@@ -1,0 +1,222 @@
+
+Image : out/_0.png
+                   
+Description : The image depicts the architecture of a Transformer model, a type of neural network widely used in natural language processing (NLP). Here's a breakdown of the components:
+
+**Input:**
+- **Inputs:** The model receives a sequence of tokens as input, representing words or subword units.
+- **Input Embedding:** The input tokens are transformed into numerical vectors using an embedding layer.
+- **Positional Encoding:** A positional encoding mechanism is added to the embedded vectors to provide information about the relative positions of the tokens within the sequence. This helps the model understand the order of words.
+
+**Encoder:**
+- The encoder is a stack of identical layers, each consisting of two main components:
+    - **Multi-Head Attention:**  This layer calculates the relationships between different parts of the input sequence. It uses multiple "heads" to capture various dependencies within the sequence, allowing the model to understand the context of each word.
+    - **Feed Forward Network:** This layer applies a series of fully connected layers to each word embedding, further processing the information from the attention layer. 
+- **Add & Norm:** These layers normalize the outputs of the attention and feed-forward networks, preventing vanishing gradients and enhancing model stability.
+- **Nx:** The encoder consists of Nx identical layers, stacked on top of each other. This repetition allows the model to capture increasingly complex relationships between words and phrases.
+
+**Decoder:**
+- The decoder also has a stack of identical layers, similar to the encoder, but with some key differences:
+    - **Masked Multi-Head Attention:** This layer focuses on relationships within the output sequence being generated. It's masked to prevent the model from peeking at future tokens during training, ensuring the output is generated in a sequential manner.
+    - **Multi-Head Attention:** This layer allows the decoder to attend to the encoded representations from the encoder, capturing the context of the input sequence for the output generation.
+    - **Feed Forward Network:**  Similar to the encoder's feed-forward network, this layer processes the information from the attention layers.
+- **Add & Norm:** These layers normalize the outputs, similar to the encoder.
+- **Nx:**  The decoder also has Nx identical layers.
+
+**Output:**
+- **Output Embedding:** The final output of the decoder is transformed back into a sequence of vectors.
+- **Linear:** This layer projects the output vectors into the desired output space, such as predicting the probability of each possible word for a language model.
+- **Softmax:** This layer converts the linear output into a probability distribution over all possible output tokens.
+- **Output Probabilities:** The softmax layer produces the probabilities for each token, allowing the model to select the most likely word or subword unit at each step of the output sequence generation.
+
+**Overall:**
+The Transformer model uses the encoder to understand the context and relationships within the input sequence and the decoder to generate the output sequence based on that context. It's a powerful architecture that has achieved state-of-the-art results in various NLP tasks, including machine translation, text summarization, and question answering. 
+
+
+Image : out/_1.png
+                   
+Description : The image shows a diagram of a neural network architecture. The network consists of a series of layers, each of which performs a specific operation on the input data. The layers are connected in a feed-forward manner, meaning that the output of one layer is used as the input to the next layer.
+
+The first layer is a MatMul layer, which performs a matrix multiplication operation. The output of the MatMul layer is then fed into a SoftMax layer, which applies the SoftMax function to the input data. The SoftMax layer normalizes the output of the MatMul layer so that the values sum to 1. The output of the SoftMax layer is then fed into a Mask layer, which optionally masks out certain values. The Mask layer is followed by a Scale layer, which scales the output of the Mask layer. The output of the Scale layer is then fed into a second MatMul layer, which performs another matrix multiplication operation. The output of the second MatMul layer is then fed into the final layer of the network, which is an output layer.
+
+The network can be trained on a dataset of inputs and outputs. The training process involves adjusting the weights of the layers in the network so that the network can predict the output for a given input.
+
+The following is a more detailed description of each layer in the network:
+
+* **MatMul:** The MatMul layer performs a matrix multiplication operation. It takes two matrices as input and produces a matrix as output.
+* **SoftMax:** The SoftMax layer applies the SoftMax function to the input data. The SoftMax function takes a vector of numbers as input and outputs a vector of numbers that sum to 1.
+* **Mask:** The Mask layer optionally masks out certain values in the input data. This is useful for preventing the network from overfitting to the training data.
+* **Scale:** The Scale layer scales the output of the Mask layer. This can be used to adjust the range of the output values.
+* **MatMul:** The second MatMul layer performs another matrix multiplication operation. The output of this layer is then fed into the final layer of the network.
+
+The network is used for predicting the output for a given input. The output can be anything, such as a classification label, a numerical value, or a sequence of values.
+
+The image is a useful tool for visualizing the architecture of a neural network. It can help to understand how the network works and how the different layers are connected.
+
+Image : out/_2.png
+                   
+Description : The image shows a diagram of a scaled dot-product attention mechanism in a transformer network. The top of the diagram shows a linear layer and a concatenation layer, which combine inputs from three different sources. The combined input is then fed into the scaled dot-product attention layer, which calculates the weighted sum of the inputs. The output of the attention layer is then fed into three different linear layers, labeled V, K, and Q. These layers perform a linear transformation on the attention output, generating a new representation of the input. The diagram highlights the different layers involved in the attention mechanism and their connections, providing a clear visual representation of the process.  It depicts how the scaled dot-product attention mechanism utilizes multiple linear transformations to achieve its goal of capturing relationships between inputs and generating a new representation.
+
+Image : out_i/panda.png
+                   
+Description : The image is a cartoon illustration of three panda bears sitting in a pink polka-dot coffee cup. The panda bears are all smiling and have black eyes and noses. The bottom panda is sitting in the cup, the middle panda is sitting on the bottom panda's shoulders, and the top panda is sitting on the middle panda's shoulders.  The cup is surrounded by small hearts in different colors. The text "Happy Valentine" is written at the bottom of the image.
+
+Image : out/_0.png
+                   
+Description : This image depicts the architecture of a Transformer model, commonly used in natural language processing (NLP) tasks. Let's break down the key components:
+
+**Input:**
+
+* **Inputs:** This represents the sequence of words or tokens that the model receives as input.
+* **Input Embedding:** This layer converts each input word into a vector representation. This vector captures semantic meaning and allows the model to understand the relationships between words.
+* **Positional Encoding:** This adds positional information to the embedded input vectors. This is essential because the model needs to know the order of words in the sequence.
+
+**Encoder:**
+
+* **Encoder:** The encoder processes the input sequence to understand the context of words.
+* **Multi-Head Attention:** This is the core component of the Transformer. It allows the model to attend to different parts of the input sequence and understand relationships between words that are not necessarily adjacent.
+* **Masked Multi-Head Attention:** This layer is used in the decoder part of the Transformer. The mask prevents the model from attending to future words when generating output.
+* **Feed Forward:** This layer applies a series of linear transformations and non-linear activation functions to each input vector. 
+* **Add & Norm:** This layer normalizes the output of the previous layer and adds it to the input, resulting in a richer representation.
+* **Nx:** The "Nx" label indicates that the encoder layers are repeated multiple times (N times) to capture deeper semantic information.
+
+**Decoder:**
+
+* **Decoder:** This part of the model generates the output sequence.
+* **Multi-Head Attention:** The decoder uses multi-head attention to attend to both the input sequence and the output sequence generated so far.
+* **Masked Multi-Head Attention:** This layer is used to prevent the decoder from attending to future words when generating output.
+* **Feed Forward:** This layer applies a series of linear transformations and non-linear activation functions to each input vector.
+* **Add & Norm:** This layer normalizes the output of the previous layer and adds it to the input, resulting in a richer representation.
+
+**Output:**
+
+* **Output Embedding:** The decoder produces a sequence of output vectors, which are then passed through the output embedding layer to convert them back to words.
+* **Softmax:** This layer normalizes the output probabilities to ensure they sum up to 1, representing the model's confidence in predicting each word in the output sequence.
+* **Output Probabilities:** The model outputs a probability distribution over all possible words, indicating the likelihood of each word being the correct output.
+
+**Overall:**
+
+The Transformer model uses a series of stacked encoder and decoder layers to process input sequences and generate output sequences. The multi-head attention mechanism enables the model to capture complex dependencies between words, making it highly effective for tasks like machine translation, text summarization, and question answering.
+
+
+Image : out/_1.png
+                   
+Description : The image depicts a neural network diagram.  It shows a series of layers and operations, with arrows indicating the flow of data. The layers are as follows:
+
+1. **Q:**  The input data, labeled "Q".
+2. **K:**  The second input data, labeled "K."
+3. **V:** The third input data, labeled "V."
+4. **MatMul:** The first matrix multiplication operation, labeled "MatMul".
+5. **Scale:** A scaling layer.
+6. **Mask (opt.):** An optional masking layer, labeled "Mask (opt.)".
+7. **SoftMax:** A SoftMax layer.
+8. **MatMul:** A second matrix multiplication operation, labeled "MatMul."
+
+The diagram indicates how data flows through the network. The outputs from **Q**, **K**, and **V** are fed into the first **MatMul** layer. The result is then scaled by the **Scale** layer, and optionally masked by the **Mask (opt.)** layer. The output of this is passed to the **SoftMax** layer, and finally to the second **MatMul** layer. The final output is directed upwards by an arrow.
+
+Image : out/_2.png
+                   
+Description : This diagram shows the architecture of a Scaled Dot-Product Attention mechanism. 
+
+-  The process starts with three input matrices, V, K, and Q. These matrices are first processed by linear transformations, which are represented by the "Linear" blocks.  
+
+-  These transformed matrices are then concatenated together, as shown by the "Concat" block. 
+
+-  The combined matrix is then fed into the Scaled Dot-Product Attention module. The "Scaled Dot-Product Attention" block represents the core attention calculation, which involves computing dot products between Q and K, scaling them, and applying a softmax function to obtain attention weights.  
+
+-  These weights are then used to perform a weighted sum of V, resulting in the final output of the attention mechanism. 
+
+-  The overall process can be understood as a way to compute a weighted average of V, where the weights are determined by the similarity between Q and K.
+
+
+Image : out_i/panda.png
+                   
+Description : This is a cute cartoon illustration of three pandas in a pink polka-dotted teacup. The top panda is perched on the edge of the cup, with its arms wrapped around the second panda, which is sitting in the cup. The bottom panda is sitting in the cup with its legs dangling over the side. The pandas all have black eyes, black noses, and black ears. The teacup has a handle and a pink polka-dot design. There are red hearts scattered around the image, and a banner at the bottom that reads "Happy Valentine".  The image is drawn in a simple, childlike style with black outlines and bright colors.
+
+Image : out/_0.png
+                   
+Description : This image is a diagram of a Transformer model architecture.  The model has the following layers:
+
+- **Input Embedding:**  The input is first embedded into a vector representation,  
+- **Positional Encoding:**  positional information is added to the input embeddings. 
+- **Encoder:** The input embeddings are processed in a series of encoder layers. Each encoder layer has the following components:
+    - **Multi-Head Attention Layer:** The self-attention mechanism is used to calculate the relationships between words in the input sequence.
+    - **Add & Norm:** The results of the self-attention layer are added to the original input and then normalized.
+    - **Feed Forward Layer:** A feed forward neural network is applied to further process the input.
+- **Decoder:** The decoder processes the encoded sequence and generates the output. Each decoder layer has the following components:
+    - **Masked Multi-Head Attention Layer:** The masked self-attention mechanism is used to calculate the relationships between words in the output sequence. 
+    - **Add & Norm:** The results of the masked self-attention layer are added to the original input and then normalized.
+    - **Feed Forward Layer:** A feed forward neural network is applied to further process the input.
+    - **Multi-Head Attention Layer:** The multi-head attention mechanism is used to calculate the relationships between words in the output sequence and the encoded input sequence.
+    - **Add & Norm:** The results of the multi-head attention layer are added to the original input and then normalized. 
+- **Output Embedding:** The final output is embedded into a vector representation.
+- **Linear Layer:** A linear transformation is applied to the output.
+- **Softmax:** The softmax function is used to normalize the output to a probability distribution.
+- **Output Probabilities:** The output is a probability distribution over the vocabulary, representing the model's prediction for the next word. 
+
+The model processes the input sequence in a parallel fashion, allowing it to learn the relationships between all words in the sequence simultaneously.  This results in a model that is faster and more efficient than traditional recurrent neural networks.
+
+Image : out/_1.png
+                   
+Description : The image shows a diagram of a neural network architecture. It is comprised of six layers, with arrows connecting each layer to the one above it.
+
+The first layer at the bottom of the diagram consists of three input nodes labeled 'Q', 'K', and 'V'. These nodes feed into the second layer, which is a 'MatMul' layer. The 'MatMul' layer multiplies the input from the previous layer and then feeds into the third layer. 
+
+The third layer is a 'Scale' layer, which performs a scaling operation on the output of the previous layer. The output of the 'Scale' layer is fed into the fourth layer, which is a 'Mask (opt.)' layer. This layer performs a masking operation on the output, which can be optional. The output of the 'Mask (opt.)' layer is then fed into the fifth layer, which is a 'SoftMax' layer. 
+
+Finally, the output of the 'SoftMax' layer is fed into the sixth layer, which is another 'MatMul' layer. The 'MatMul' layer performs a matrix multiplication on the input from the previous layer. The output of the 'MatMul' layer is then fed into an output layer (not shown in the image).
+
+The diagram also shows arrows pointing upwards from the first and sixth layers. This indicates that these layers are also connected to the top of the diagram. The arrow pointing upwards from the first layer could indicate that the input nodes are also connected to other parts of the network. The arrow pointing upwards from the sixth layer could indicate that the output of the network is then fed into another layer or component.
+
+This image shows a basic neural network architecture, with different layers and functions performing specific operations. It's used for understanding how information is processed and transformed through the network.
+
+Image : out/_2.png
+                   
+Description : The image depicts a diagram of a scaled dot-product attention mechanism, a common component in transformer-based neural networks. 
+
+The diagram is structured as follows:
+
+- **Top:** The diagram starts with an arrow pointing upwards, indicating an input to the attention mechanism. 
+- **Linear Layer:** Above the arrow, there's a box labeled "Linear," representing a linear transformation applied to the input.
+- **Concat:** This is followed by a yellow box labeled "Concat," indicating that the output of the linear layer is concatenated with another input.
+- **Scaled Dot-Product Attention:**  This is the central part of the diagram, depicted as a large, layered box. The top layer is labeled "Scaled Dot-Product Attention," suggesting that the mechanism uses a scaled dot-product to calculate attention weights. 
+- **Linear Layers (V, K, Q):**  Below the scaled dot-product attention, there are three boxes labeled "Linear" (V, K, and Q), signifying three different linear transformations applied to the inputs.
+- **Outputs:**  From each linear layer, an arrow points downwards, labeled "V," "K," and "Q." These represent the transformed outputs of the respective linear layers.  
+
+The overall diagram suggests that the scaled dot-product attention mechanism works by first performing linear transformations on three inputs, followed by a concatenation step. The resulting concatenated input is then fed into the scaled dot-product attention layer to calculate attention weights. The diagram shows the final outputs of the attention mechanism as V, K, and Q, which are likely used in subsequent parts of the neural network. 
+
+
+Image : out_i/panda.png
+                   
+Description : This cute cartoon illustration shows three pandas sitting inside a pink polka-dotted teacup. The top panda is holding on to the panda in the middle with its paws. The bottom panda is sitting on the edge of the cup with its paws outstretched.  There are small red hearts scattered around the illustration and a banner with the words "Happy Valentine" underneath the cup. The background is white. The pandas are drawn in a simple style with black outlines, and they have black eyes and noses and pink cheeks. The cup is pink with white polka dots and a black outline. The hearts are small and red. This is a cute and heartwarming illustration that is perfect for Valentine's Day.
+
+Image : out_i/Screenshot 2024-07-23 163254.png
+                   
+Description : The image shows an electric motor for an e-bike, electric tricycle, or DIY ebike project. The motor is silver in color and has a black wire attached to it. The motor has a gear on the side and is designed for a 9-tooth chain sprocket. The image is shown on an Amazon product page with a description and price. The price is ₹3,929 which is a 35% discount from the original price of ₹5,999. The page also includes information about the different EMI (Equated Monthly Installment) options available. There are also images showing that the product offers free delivery, 7-day replacement, Amazon delivered, pay on delivery, and a secure transaction. The page also includes information about the product, including that it is a 24-volt, 250-watt motor with a 1/8" bicycle chain sprocket.
+
+Image : out_i/Screenshot 2024-07-23 163349.png
+                   
+Description : The image shows an online product listing for a Kirloskar Chotu 0.5HP Domestic Water Motor Pump. The image is split into two parts. The top half is the product details, while the bottom half shows the product itself. 
+
+The top half of the image features a green and black motor pump, with the Kirloskar brand name prominently displayed. The product title, "Kirloskar Chotu 0.5HP Domestic Water Motor Pump (Multicolour)", is at the top of the image. Below that, the brand, Kirloskar, and its 4.0-star rating with 2,620 ratings are displayed. The text "50+ bought in past month" is displayed beneath the rating.
+
+Next, the current price of the pump is shown as ₹3,149, with a discount of 25% from the original price of ₹4,200. The product description below clarifies that the price includes all taxes. The image also shows the EMI options, indicating that the EMI starts at ₹153, with a No Cost EMI available.
+
+The image then provides information on various offers for the product, split into three categories: "No Cost EMI", "Bank Offer", and "Partner Offers". The "No Cost EMI" section details that up to ₹141.81 EMI interest savings are available through Amazon Pay ICICI, with a "1 offer" link. The "Bank Offer" section provides information about a discount of up to ₹2,000.00 on select Credit Cards, Federal Bank Debit Cards, and more, with a "10 offers" link. The "Partner Offers" section details a potential savings of up to 28% on business purchases when using the Get GST invoice offer, with a "1 offer" link.
+
+The bottom half of the image showcases the product itself. The main image shows a close-up of the motor pump, with an option to roll over the image to zoom in. The "Roll over image to zoom in" text is displayed above a row of three smaller images. The first image is a static image of the motor pump from a different angle. The second is a video icon with a play button, indicating a video of the motor pump is available. The third is another static image of the motor pump from a different angle.  The words "VIDEO" are displayed under the video icon.
+
+The image continues to display additional product information.  There are five buttons under the images, with the first button labelled "Free Delivery", the second labelled "Pay on Delivery", the third labelled "7 days Replacement", the fourth labelled "12 Month Warranty", the fifth labelled "Top Brand", and the sixth labelled "Amazon Delivered". An arrow pointing to the right is located to the far right of the image.
+
+Below the buttons is information about the size of the motor pump: "Size: 26 cms x 19 cms".  Two buttons are provided for users to select a size: "26 cms x 19 cms" and "standard". 
+
+The text "Pattern Name: Water Motor Pump Combo" is displayed below the size options. Finally, two more buttons are shown for the user to select a specific type of pump: "Water Motor Pump Combo" and "Water Motor Pump + Self Priming Water Pump". 
+
+
+Image : out_i/Screenshot 2024-07-23 163323.png
+                   
+Description : The image is a product page from Amazon. The product is a INVENTA Nema 23 25 Kg-cm 4 Wire Bipolar Stepper Motor High Torque for 3D Printer CNC Robotics DIY Projects. The product is priced at ₹2,999, a 49% discount from its original price of ₹5,990. The product has a 3.6 star rating with 16 reviews.
+
+The image shows a picture of the stepper motor. The motor is black and silver and has a round shaft coming out of the side. There are 4 wires coming out of the motor.
+
+The page also includes information about the product, such as the brand, voltage, material, item weight, and manufacturer. The product is available for delivery in 7 days and can be paid for on delivery. It is also eligible for free delivery and is a top brand. The page also includes information about the offers available on the product, including no cost EMI, bank offers, and partner offers.
